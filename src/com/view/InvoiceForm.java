@@ -303,9 +303,26 @@ public class InvoiceForm extends javax.swing.JFrame {
     public void setLinesArr(ArrayList<InvoiceLines> linesArr) {
         this.linesArr = linesArr;
     }
+    
+    public void displayInvoices() {
+        System.out.println("**********************************");
+        for (InvoiceHeader invoice : invoiceArr) {
+            System.out.println("InvoiceHeader{invNum=" + invoice.getInvNum() + 
+                    ",customer= " + invoice.getCustName() + ", invDate= " + 
+                    dF.format(invoice.getInvDate()) + ", total= " + invoice.getInvoiceTotal() + "}");
+            for (InvoiceLines line : invoice.getLines()){
+                System.out.println("\t\tInvoiceLines{item= " + line.getInvItem() + ", price= " 
+                        + line.getPrice() + ", count= " + line.getCount() + ", total= " + 
+                        line.getLineTotal() + "}");
+            }
+            System.out.println("------------------------------------");
+        }
+        
+        System.out.println("**********************************");
+    }
+    
+ } 
   
-}
-
 
 
 

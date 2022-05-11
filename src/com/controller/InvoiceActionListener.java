@@ -130,6 +130,7 @@ public class InvoiceActionListener implements ActionListener {
         }  catch (ParseException e) {
               JOptionPane.showMessageDialog(form, e.getMessage(), "Error Message", JOptionPane.ERROR_MESSAGE);
         }
+        form.displayInvoices();
     }
     
     private void saveFile() {
@@ -166,6 +167,7 @@ public class InvoiceActionListener implements ActionListener {
         } catch (IOException e) {
             JOptionPane.showMessageDialog(form, e.getMessage(), "Error Message", JOptionPane.ERROR_MESSAGE);
         }
+        form.displayInvoices();
     }
     
     private void createNewInvoice() {
@@ -185,6 +187,7 @@ public class InvoiceActionListener implements ActionListener {
             form.getCustNameLabel().setText("");
             form.getInvTotalLabel().setText("");
         }
+        form.displayInvoices();
     }
 
     private void createNewLine() {
@@ -204,6 +207,7 @@ public class InvoiceActionListener implements ActionListener {
          form.getInvHeaderTableModel().fireTableDataChanged();
          form.getInvHeadTbl().setRowSelectionInterval(selectedInvoiceInd, selectedInvoiceInd);
        }
+       form.displayInvoices();
     }
 
     private void newInvDialogOk() {
@@ -230,6 +234,7 @@ public class InvoiceActionListener implements ActionListener {
         form.getInvHeaderTableModel().fireTableDataChanged();
         headerD.dispose();
         headerD = null;
+        form.displayInvoices();
     }
 
     private void newInvDialogCancel() {
@@ -273,6 +278,7 @@ public class InvoiceActionListener implements ActionListener {
         form.getInvHeadTbl().setRowSelectionInterval(selectedInvHeader, selectedInvHeader);
         lineDialog.dispose();
         lineDialog = null;
+        form.displayInvoices();
     }
     
 }
